@@ -36,7 +36,7 @@ public class MenuService {
             return null;
         }
         return child.stream()
-                //.filter(element-> Context.authorityMap.get(element.id()).get("r"))
+                .filter(element-> Context.authorityMap.get(element.id()).get("r"))
                 .map(menuItemEntity -> menuMapper.map(menuItemEntity, findChild(menuItemEntity)))
                 .toList();
     }
