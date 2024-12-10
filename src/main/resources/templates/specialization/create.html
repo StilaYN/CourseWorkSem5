@@ -22,7 +22,7 @@
             <h1 th:text="#{header.create.specialization}">=</h1>
             <form method="post" th:action="@{/specialization/create}">
                 <label class="label-input">
-                    <input class="rounded-input" type="text" name="specialization" th:placeholder="#{header.specialization.name}" th:disabled="${!authorityMap.get('w')}"
+                    <input class="rounded-input" type="text" name="specializationName" th:placeholder="#{header.specialization.name}" th:disabled="${!authorityMap.get('w')}"
                            maxlength="100">
                 </label>
                 <button th:hidden="${!authorityMap.get('w')}" class="rounded-button" type="submit" th:text="#{button.create}">=</button>

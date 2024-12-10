@@ -23,7 +23,7 @@ public class DocumentTypeController {
     @PostMapping(ApiPaths.DOCUMENT_TYPE_CREATE)
     public String createDocument(DocumentTypeCreationRequest request) {
         documentTypeService.createDocumentType(request);
-        return "redirect:/document_type/list";
+        return "redirect:/documentType/list";
     }
 
     @GetMapping(ApiPaths.DOCUMENT_TYPE_CREATE)
@@ -49,7 +49,7 @@ public class DocumentTypeController {
         } else {
             documentTypeService.updateDocumentType(documentUpdateRequest);
         }
-        return "redirect:/document_type/list";
+        return "redirect:/documentType/list";
     }
 
     @GetMapping(ApiPaths.DOCUMENT_TYPE_UPDATE)
