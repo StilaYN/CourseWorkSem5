@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{page_title}">=</title>
+</head>
+<body>
+    <table>
+        <caption><h2 th:text="#{|${tableTitle}|}"> = </h2> </caption>
+        <thead>
+            <tr>
+                <th th:each="name :${columnName}" th:text="#{|${name}|}"> = </th>
+            </tr>
+        </thead>
+        <tbody th:each="map:${mapData}">
+            <tr>
+                <td th:href="@{${basePath} + '/' + {id}(id=${map.get(idName)})}">=</td>
+                <td th:each="key:${columnName}" th:text="${map.get(key)}"> = </td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>

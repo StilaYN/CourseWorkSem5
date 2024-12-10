@@ -1,0 +1,212 @@
+
+.full-width-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+tr {
+    cursor: pointer;
+}
+
+.masked-link{
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.top-caption{
+    position: static;
+    caption-side: top;
+    text-align: left;
+    pudding-bottom: 10px;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.page-header{
+    padding: 15px;
+    color:white;
+    background-color: #e04747;
+    display: grid;
+    width: 100%;
+    max-height: 82px;
+    grid-template-columns: 2fr 4fr 2fr;
+}
+
+
+.sticky-table-header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-align: left;
+    color:white;
+    background-color: #e04747;
+}
+
+.page-title{
+
+}
+
+.table-container{
+    /*padding: 0 20px 20px 20px;*/
+    padding-bottom: 10px;
+    width: 100%;
+    max-height: 500px;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.row-container{
+    max-height: 400px;
+    overflow: auto;
+}
+
+.two-row-container{
+    display: grid;
+    grid-template-rows: 10% 90%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding:10px;
+}
+
+.table-fixed-size{
+    width: 100%;
+    overflow: auto;
+    height: 100%
+}
+
+.page-vertical-grid{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 0.7fr 5fr 0.7fr;
+}
+
+.page-horizontal-grid{
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    width: 100%;
+    height: 100%;
+}
+
+.edit-page-horizontal-grid{
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+}
+
+.edit-page-vertical-grid{
+    display: grid;
+    width: 100%;
+    grid-template-rows: 2fr 8fr;
+}
+
+.label-input {
+    width: 100%;
+}
+
+.rounded-input {
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 25px; /* Радиус скругления */
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.rounded-input:focus {
+    border-color: #007bff; /* Цвет границы при фокусе */
+    outline: none; /* Убираем стандартное обводка */
+}
+
+.rounded-button {
+    margin: 5px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 25px; /* Скругление кнопки */
+    background-color: #e04747;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.rounded-button:hover {
+    background-color: #f55353; /* Цвет кнопки при наведении */
+}
+
+.search-container {
+    width: 100%;
+}
+
+.search-input {
+    width: 100%; /* Ширина поля ввода */
+    height: 100%;
+    padding: 10px 10px 10px 20px; /* Отступы для текста и кнопки */
+    border: 2px solid #ccc;
+    border-radius: 25px; /* Скругление углов */
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #007bff; /* Цвет границы при фокусе */
+    outline: none; /* Убираем стандартное обводка */
+}
+
+.search-button {
+    border: none;
+    background-color: transparent; /* Прозрачный фон */
+    cursor: pointer;
+    font-size: 18px; /* Размер иконки */
+}
+
+.search-button:hover {
+    color: #F55353FF; /* Цвет иконки при наведении */
+}
+
+.search-label{
+    padding-right: 20px;
+}
+
+.list-button{
+    margin-right: 10px;
+    margin-left: 15px;
+    padding: 10px;
+    width: 97%;
+    border: none;
+    border-radius: 25px; /* Скругление кнопки */
+    background-color: #e04747;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ul-menu {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+}
+
+/* Стили для элементов списка */
+.li-menu {
+    margin: 5px 0; /* Отступы между элементами списка */
+}
+
+/* Стили для вложенных списков */
+.children {
+    margin-left: 20px; /* Отступ слева для вложенных элементов */
+    border-left: 1px solid #ccc; /* Левый бордер для визуального отделения */
+    padding-left: 10px; /* Отступ внутри вложенного списка */
+}
+.container-menu{
+    padding-left: 50px;
+    margin-top: 75px;
+    margin-right: 150px;
+    border-right: 5px solid #e04747;
+
+}

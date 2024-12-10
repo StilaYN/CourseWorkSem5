@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{page_title}">Title</title>
+</head>
+<body>
+<h1 th:text="#{header.create.employees}"></h1>
+<form method="post" th:action="@{/employees}">
+    <label>
+        <input type="number" th:placeholder="#{header.employees.id}">
+    </label>
+    <label>
+        <input type="text"  maxlength="30" th:placeholder="#{header.employees.lastName}">
+    </label>
+    <label>
+        <input type="text" maxlength="30" th:placeholder="#{header.employees.firstName}">
+    </label>
+    <label>
+        <input type="text" maxlength="30" th:placeholder="#{header.employees.middleName}">
+    </label>
+    <label>
+        <input type="text" maxlength="50" th:placeholder="#{header.employees.sex}">
+    </label>
+    <label>
+        <input type="date" th:placeholder="#{header.employees.sex}">
+    </label>
+    <label>
+        <input list="city_list" th:placeholder="#{header.employees.city}">
+    </label>
+    <label>
+        <input list="street_list" th:placeholder="#{header.employees.street}">
+    </label>
+    <label>
+        <input type="text" maxlength="10" th:placeholder="#{header.employees.houseNumber}">
+    </label>
+    <label>
+        <input type="text" maxlength="10" th:placeholder="#{header.employees.apartmentNumber}">
+    </label>
+    <label>
+        <input list="specialization_list" th:placeholder="#{header.employees.specialization}">
+    </label>
+    <label>
+        <input type="text" maxlength="200" th:placeholder="#{header.employees.experience}">
+    </label>
+    <label>
+        <input list="document_list" th:placeholder="#{header.employees.documentType}">
+    </label>
+    <label>
+        <input type="text" maxlength="20" th:placeholder="#{header.employees.documentNumber}">
+    </label>
+    <label>
+        <input type="text" maxlength="200" th:placeholder="#{header.employees.education}">
+    </label>
+    <label>
+        <input type="number" th:placeholder="#{header.employees.salary}">
+    </label>
+    <button type="submit" th:text="#{button.create}">=</button>
+</form>
+<select id="city_list">
+    <option th:each="city:${cityList}" th:value="${city.id}" th:text="${city.cityName}">=</option>
+</select>
+<select id="street_list">
+    <option th:each="street:${streetList}" th:value="${street.id}" th:text="${street.streetName}">=</option>
+</select>
+<select id="specialization_list">
+    <option th:each="specialization:${specializationList}" th:value="${specialization.id}"
+            th:text="${specialization.specializationName}">=
+    </option>
+</select>
+<select id="document_list">
+    <option th:each="document:${documentList}" th:value="${document.id}" th:text="${document.documentName}">=</option>
+</select>
+
+</body>
+</html>

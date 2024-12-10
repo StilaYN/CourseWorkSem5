@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{page_title}">=</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+    <link href="/css/custom_styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="page-vertical-grid">
+    <div class="page-header">
+        <div><a class="masked-link" th:href="@{/homepage}"><h2 th:text="#{product.name}"></h2></a></div>
+        <div class="search-container">
+            <form method="get" th:action="@{/specialization/list}">
+                <label class="label-input search-label">
+                    <input type="text" class="search-input" th:name="specializationName" th:placeholder="#{header.search}"
+                           th:value="${searchResult}">
+                </label>
+            </form>
+        </div>
+    </div>
+    <div class="page-horizontal-grid">
+        <div th:insert="~{fragments/menu :: menu(menu=${menu})}"></div>
+        <div class="two-row-container">
+            <div><h2 class="page-title" th:text="#{table.name.specialization}"> = </h2></div>
+            <div class="table-container">
+                <table class="table table-hover table-bordered">
+                    <!--                <caption class="caption-top"><h1 th:text="#{table.name.city}"> = </h1></caption>-->
+                    <thead class="sticky-table-header">
+                    <tr>
+                        <th th:text="#{id}" th:class="static-table-header">=</th>
+                        <th th:text="#{header.specialization.name}" th:class="static-table-header">=</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="specialization:${specializationList}">
+                        <td><a th:hidden="${!authorityMap.get('e') && !authorityMap.get('d')}"
+                               th:href="@{/specialization/update/{id}(id=${specialization.id})}" th:text="${specialization.id}"
+                               class="full-width-link">=</a>
+                            <span th:hidden="${authorityMap.get('e') && authorityMap.get('d')}" th:text="${specialization.id}"
+                                  class="full-width-link">=</span>
+                        </td>
+                        <td>
+                            <a th:hidden="${!authorityMap.get('e') && !authorityMap.get('d')}"
+                               th:href="@{/specialization/update/{id}(id=${specialization.id})}" th:text="${specialization.specializationName}"
+                               class="full-width-link">=</a>
+                            <span th:hidden="${authorityMap.get('e') && authorityMap.get('d')}"
+                                  th:text="${specialization.specializationName}"
+                                  class="full-width-link">=</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="page-horizontal-grid">
+        <div></div>
+        <div>
+            <form method="get" th:action="@{/specialization/create}">
+                <label th:hidden="${!authorityMap.get('w')}" class="label-input">
+                    <button class="list-button" type="submit" th:text="#{button.add}"></button>
+                </label>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

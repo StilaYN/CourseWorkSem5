@@ -1,0 +1,9 @@
+<div th:fragment="submenu(menu, depth)">
+    <ul th:if="${not #lists.isEmpty(menu.children)}" th:class="${depth > 1} ? 'children'">
+        <li th:each="child : ${menu.children}">
+            <span th:if="${#strings.isEmpty(child.actionUri)}" th:text="#{|${child.displayLabel}|}">Addons</span>
+            <a class="masked-link" th:if="${not #strings.isEmpty(child.actionUri)}" th:href="${child.actionUri}" th:text="#{|${child.displayLabel}|}">Link Item</a>
+            <div th:replace="~{fragments/submenu :: submenu(menu=${child}, depth=${depth + 1})}"></div>
+        </li>
+    </ul>
+</div>
