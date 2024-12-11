@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import ru.database.coursework.core.repository.AuthRepository;
 import ru.database.coursework.core.repository.BankRepository;
 import ru.database.coursework.core.repository.CityRepository;
+import ru.database.coursework.core.repository.ClientRepository;
 import ru.database.coursework.core.repository.DocumentTypeRepository;
 import ru.database.coursework.core.repository.EmployeeRepository;
 import ru.database.coursework.core.repository.MenuRepository;
@@ -49,4 +50,7 @@ public class DatabaseConfig {
 
     @Bean
     public SpecializationRepository specializationRepository(Jdbi jdbi) {return jdbi.onDemand(SpecializationRepository.class);}
+
+    @Bean
+    public ClientRepository clientRepository(Jdbi jdbi) {return jdbi.onDemand(ClientRepository.class);}
 }

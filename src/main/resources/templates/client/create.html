@@ -1,0 +1,95 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{page_title}">Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+    <link href="/css/custom_styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="edit-page-vertical-grid">
+    <div class="page-header">
+        <a class="masked-link" th:href="@{/homepage}"><h2 th:text="#{product.name}"></h2></a>
+    </div>
+    <div class="edit-page-horizontal-grid">
+        <div>
+            <div th:insert="~{fragments/menu :: menu(menu=${menu})}"></div>
+            <a th:href="@{/client/list}" th:text="#{button.back}"></a>
+        </div>
+        <div>
+            <h1 th:text="#{header.create.client}">=</h1>
+            <form method="post" th:action="@{/client/create}">
+                <label class="label-input">
+                    <input class="rounded-input" type="text" name="clientName" th:placeholder="#{header.client.name}"
+                           th:disabled="${!authorityMap.get('w')}"
+                           maxlength="150">
+                </label>
+                <label class="label-input">
+                    <input class="rounded-input" type="text" name="representativeLastName" th:placeholder="#{header.client.representativeLastName}"
+                           th:disabled="${!authorityMap.get('w')}"
+                           maxlength="150">
+                </label>
+                <label class="label-input">
+                    <input class="rounded-input" type="text" name="representativeFirstName" th:placeholder="#{header.client.representativeFirstName}"
+                           th:disabled="${!authorityMap.get('w')}"
+                           maxlength="150">
+                </label>
+                <label class="label-input">
+                    <input class="rounded-input" type="text" name="representativeMiddleName" th:placeholder="#{header.client.representativeMiddleName}"
+                           th:disabled="${!authorityMap.get('w')}"
+                           maxlength="150">
+                </label>
+                <label class="label-input">
+                    <input class="rounded-input" type="text" name="representativePhoneNumber" th:placeholder="#{header.client.representativePhoneNumber}"
+                           th:disabled="${!authorityMap.get('w')}"
+                           maxlength="150">
+                </label>
+                <label class="label-input">
+                    <select class="rounded-input" name="cityId" th:placeholder="#{header.city.name}"
+                            th:disabled="${!authorityMap.get('w')}">
+                        <option th:each="city:${cityList}" th:value="${city.id}" th:text="${city.cityName}">=</option>
+                    </select>
+                </label>
+                <label class="label-input">
+                    <select class="rounded-input" name="streetId" th:placeholder="#{header.city.name}"
+                            th:disabled="${!authorityMap.get('w')}">
+                        <option th:each="street:${streetList}" th:value="${street.id}" th:text="${street.streetName}">=</option>
+                    </select>
+                </label>
+                <label class="label-input">
+                    <input class="rounded-input" type="text" name="houseNumber" th:placeholder="#{header.client.houseNumber}"
+                           th:disabled="${!authorityMap.get('w')}"
+                           maxlength="10">
+                </label>
+                <label class="label-input">
+                    <input class="rounded-input" type="text" name="apartmentNumber" th:placeholder="#{header.client.apartmentNumber}"
+                           th:disabled="${!authorityMap.get('w')}"
+                           maxlength="10">
+                </label>
+                <label class="label-input">
+                    <input class="rounded-input" type="text" name="accountNumber" th:placeholder="#{header.client.accountNumber}"
+                           th:disabled="${!authorityMap.get('w')}"
+                           maxlength="20">
+                </label>
+                <label class="label-input">
+                    <input class="rounded-input" type="text" name="taxpayerIdentificationNumber" th:placeholder="#{header.client.taxpayerIdentificationNumber}"
+                           th:disabled="${!authorityMap.get('w')}"
+                           maxlength="20">
+                </label>
+                <label class="label-input">
+                    <select class="rounded-input" name="bankId" th:placeholder="#{header.city.name}"
+                            th:disabled="${!authorityMap.get('w')}">
+                        <option th:each="bank:${bankList}" th:value="${bank.id}" th:text="${bank.bankName}">=</option>
+                    </select>
+                </label>
+                <button th:hidden="${!authorityMap.get('w')}" class="rounded-button" type="submit"
+                        th:text="#{button.create}">=
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
