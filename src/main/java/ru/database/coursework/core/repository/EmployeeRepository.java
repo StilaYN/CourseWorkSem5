@@ -106,7 +106,7 @@ public interface EmployeeRepository {
             SET first_name=:employee.firstName,
                 last_name=:employee.lastName,
                 middle_name=:employee.middleName,
-                sex=:employee.sex,
+                sex=:employee.sex::sex_enum,
                 birth_date=:employee.birthDate,
                 city_id=:employee.cityId,
                 street_id=:employee.streetId,
