@@ -76,7 +76,7 @@
                            maxlength="10">
                 </label>
                 <label class="label-input">
-                    <select class="rounded-input" name="specialization"
+                    <select class="rounded-input" name="specializationId"
                             th:placeholder="#{header.employees.specialization}"
                             th:disabled="${!authorityMap.get('w')}">
                         <option th:each="specialization:${specializationList}" th:value="${specialization.id}"

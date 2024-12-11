@@ -90,14 +90,14 @@ public interface EmployeeRepository {
                OR sex::text ILIKE coalesce(:template, sex::text)
                OR city_name ILIKE coalesce(:template, city_name)
                OR street_name ILIKE coalesce(:template, street_name)
-               OR house_number ILIKE coalesce( :template, house_number)
+               OR house_number ILIKE coalesce(:template, house_number)
                OR apartment_number ILIKE coalesce(:template, apartment_number)
                OR specialization_name ILIKE coalesce(:template, specialization_name)
                OR experience ILIKE coalesce(:template, experience)
                OR document_type_name ILIKE coalesce(:template, document_type_name)
                OR document_number ILIKE coalesce(:template, document_number)
                OR education ILIKE coalesce(:template, education)
-            ORDER BY id;
+            ORDER BY employees.id;
             """)
     List<Employee> findAll(@Bind("template") String template);
 
