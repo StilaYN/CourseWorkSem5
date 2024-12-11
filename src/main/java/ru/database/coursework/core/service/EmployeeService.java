@@ -6,8 +6,10 @@ import ru.database.coursework.api.common.model.SingleData;
 import ru.database.coursework.api.common.model.TableData;
 import ru.database.coursework.api.employee.mapper.EmployeeMapper;
 import ru.database.coursework.api.employee.model.Employee;
+import ru.database.coursework.api.employee.model.EmployeeCreationRequest;
 import ru.database.coursework.api.employee.model.EmployeeFilter;
 import ru.database.coursework.api.employee.model.EmployeeTableHeader;
+import ru.database.coursework.api.employee.model.EmployeeUpdateRequest;
 import ru.database.coursework.core.repository.EmployeeRepository;
 
 import java.util.List;
@@ -18,21 +20,25 @@ public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
-    private final EmployeeMapper employeeMapper;
-
-    public SingleData getEmployeeById(int id) {
-        Employee employee = employeeRepository.getEmployeeById(id);
-        return SingleData.builder()
-                .fieldNames(EmployeeTableHeader.EMPLOYEES_TABLE_HEADER)
-                .fieldValues(employeeMapper.map(employee))
-                .build();
+    public void create(EmployeeCreationRequest employee) {
+        employeeRepository.save(employee);
     }
 
-    public TableData getAllEmployees(EmployeeFilter employee) {
-        List<Employee> employees =  employeeRepository.getEmployees();
-        return TableData.builder()
-                .columnNames(EmployeeTableHeader.EMPLOYEES_TABLE_HEADER)
-                .data(employeeMapper.map(employees))
-                .build();
+    public Employee getEmployeeById(int id) {
+        return employeeRepository.findById(id);
+    }
+
+    public List<Employee> getAllEmployees(EmployeeFilter employeeFilter) {
+        String template = (employeeFilter == null || employeeFilter.template() == null) ?
+                null : "%" + employeeFilter.template() + "%";
+        return employeeRepository.findAll(template);
+    }
+
+    public void update(EmployeeUpdateRequest employee) {
+        employeeRepository.update(employee);
+    }
+
+    public void delete(int id) {
+        employeeRepository.delete(id);
     }
 }

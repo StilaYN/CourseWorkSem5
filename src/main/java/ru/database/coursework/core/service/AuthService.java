@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.database.coursework.api.auth.model.AuthRequest;
 import ru.database.coursework.core.Context;
-import ru.database.coursework.core.Entity.AuthEntity;
-import ru.database.coursework.core.Entity.UserPrivileges;
+import ru.database.coursework.core.entity.AuthEntity;
+import ru.database.coursework.core.entity.UserPrivileges;
 import ru.database.coursework.core.mapper.AuthMapper;
 import ru.database.coursework.core.repository.AuthRepository;
 

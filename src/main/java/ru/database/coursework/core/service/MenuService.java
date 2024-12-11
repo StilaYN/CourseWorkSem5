@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ru.database.coursework.api.common.model.MenuItem;
 import ru.database.coursework.core.Context;
-import ru.database.coursework.core.Entity.MenuItemEntity;
+import ru.database.coursework.core.entity.MenuItemEntity;
 import ru.database.coursework.core.mapper.MenuMapper;
 import ru.database.coursework.core.repository.MenuRepository;
 

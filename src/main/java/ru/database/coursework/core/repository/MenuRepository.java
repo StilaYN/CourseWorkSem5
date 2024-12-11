@@ -3,7 +3,7 @@ package ru.database.coursework.core.repository;
 import org.jdbi.v3.sqlobject.config.RegisterConstructorMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
-import ru.database.coursework.core.Entity.MenuItemEntity;
+import ru.database.coursework.core.entity.MenuItemEntity;
 
 import java.util.List;
 

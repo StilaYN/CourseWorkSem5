@@ -3,8 +3,8 @@ package ru.database.coursework.core.repository;
 import org.jdbi.v3.sqlobject.config.RegisterConstructorMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
-import ru.database.coursework.core.Entity.AuthEntity;
-import ru.database.coursework.core.Entity.UserPrivileges;
+import ru.database.coursework.core.entity.AuthEntity;
+import ru.database.coursework.core.entity.UserPrivileges;
 
 import java.util.List;
 import java.util.Optional;

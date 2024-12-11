@@ -1,7 +1,7 @@
 package ru.database.coursework.core.mapper;
 
 import org.mapstruct.Mapper;
-import ru.database.coursework.core.Entity.UserPrivileges;
+import ru.database.coursework.core.entity.UserPrivileges;
 
 import java.util.HashMap;
 import java.util.List;
