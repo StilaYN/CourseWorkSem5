@@ -21,7 +21,7 @@ public interface EmployeeRepository {
             INSERT INTO employees (first_name, last_name, middle_name, sex, birth_date, city_id, street_id, house_number,
                                    apartment_number, specialization_id, experience, document_type_id, document_number, education,
                                    salary)
-            VALUES (:employee.firstName, :employee.lastName, :employee.middleName, :employee.sex, :employee.birthDate,
+            VALUES (:employee.firstName, :employee.lastName, :employee.middleName, :employee.sex::sex_enum, :employee.birthDate,
                     :employee.cityId, :employee.streetId, :employee.houseNumber, :employee.apartmentNumber,
                     :employee.specializationId, :employee.experience, :employee.documentTypeId, :employee.documentNumber,
                     :employee.education, :employee.salary)

@@ -45,7 +45,7 @@ public interface ClientRepository {
             FROM clients
                      JOIN public.banks b on b.id = clients.bank_id
                      JOIN public.cities c on c.id = clients.city_id
-                     JOIN public.streets s on c.id = s.city_id
+                     JOIN public.streets s on clients.street_id = s.id
             WHERE clients.id=:id;
             """)
     Client findById(@Bind("id") Integer id);
@@ -70,7 +70,7 @@ public interface ClientRepository {
             FROM clients
                      JOIN public.banks b on b.id = clients.bank_id
                      JOIN public.cities c on c.id = clients.city_id
-                     JOIN public.streets s on c.id = s.city_id
+                     JOIN public.streets s on clients.street_id = s.id
             WHERE client_name ILIKE coalesce(:template, client_name)
                OR clients.representative_first_name ILIKE coalesce(:template, representative_first_name)
                OR representative_last_name ILIKE coalesce(:template, representative_last_name)
@@ -82,13 +82,14 @@ public interface ClientRepository {
                OR apartment_number ILIKE coalesce(:template, apartment_number)
                OR account_number ILIKE coalesce(:template, account_number)
                OR clients.taxpayer_identification_number ILIKE coalesce(:template, clients.taxpayer_identification_number)
-               OR bank_name ILIKE coalesce(:template, bank_name);
+               OR bank_name ILIKE coalesce(:template, bank_name)
+            ORDER by id;
             """)
     List<Client> findAll(@Bind("template") String template);
 
     @SqlUpdate("""
             UPDATE clients
-            SET client_name                   = :client.clientName,
+            SET client_name =:client.clientName,
                 representative_first_name=:client.representativeFirstName,
                 representative_last_name=:client.representativeLastName,
                 representative_middle_name=:client.representativeMiddleName,
