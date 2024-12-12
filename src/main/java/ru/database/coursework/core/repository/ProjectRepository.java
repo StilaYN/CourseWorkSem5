@@ -22,7 +22,7 @@ public interface ProjectRepository {
             VALUES (project:name, project:price, project:directorId, project:startDate, project:endDate, project:clientId,
                     project:initialBid);
             """)
-    void create(@BindMethods("project") ProjectCreationRequest projectCreationRequest);
+    void save(@BindMethods("project") ProjectCreationRequest projectCreationRequest);
 
     @SqlQuery("""
             SELECT projects.id,
@@ -62,7 +62,7 @@ public interface ProjectRepository {
                OR client_name ILIKE coalesce(:template, client_name)
             ORDER BY projects.id;
             """)
-    List<Project> findAll(String template);
+    List<Project> findAll(@Bind("template") String template);
 
     @SqlUpdate("""
             UPDATE projects

@@ -17,7 +17,7 @@ public class ProjectService {
     private final ProjectRepository projectRepository;
 
     public void createProject(ProjectCreationRequest project) {
-        projectRepository.create(project);
+        projectRepository.save(project);
     }
 
     public Project getProjectById(int id) {

@@ -22,6 +22,9 @@
             <h1 th:text="#{header.update.project}">=</h1>
             <form method="post" th:action="@{/project/update/{id}(id=${project.id})}">
                 <label class="label-input">
+                    <input class="rounded-input" type="number" th:name="id" th:value="${project.id}" disabled>
+                </label>
+                <label class="label-input">
                     <input class="rounded-input" type="text" name="name" th:placeholder="#{header.project.name}"
                            th:disabled="${!authorityMap.get('w')}"
                            th:value="${project.name}"
