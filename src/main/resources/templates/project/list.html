@@ -15,7 +15,7 @@
     <div class="page-header">
         <div><a class="masked-link" th:href="@{/homepage}"><h2 th:text="#{product.name}"></h2></a></div>
         <div class="search-container">
-            <form method="get" th:action="@{/street/list}">
+            <form method="get" th:action="@{/project/list}">
                 <label class="label-input search-label">
                     <input type="text" class="search-input" th:name="template" th:placeholder="#{header.search}"
                            th:value="${searchResult}">
