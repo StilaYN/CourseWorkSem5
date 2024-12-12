@@ -55,14 +55,14 @@
                     <select class="rounded-input" name="cityId" th:placeholder="#{header.city.name}"
                             th:disabled="${!authorityMap.get('w')}"
                             th:value="${client.cityId}">
-                        <option th:each="city:${cityList}" th:value="${city.id}" th:text="${city.cityName}">=</option>
+                        <option th:each="city:${cityList}" th:value="${city.id}" th:text="${city.cityName}" th:selected="${client.cityId()==city.id()}">=</option>
                     </select>
                 </label>
                 <label class="label-input">
                     <select class="rounded-input" name="streetId" th:placeholder="#{header.city.name}"
                             th:disabled="${!authorityMap.get('w')}"
                             th:value="${client.streetId}">
-                        <option th:each="street:${streetList}" th:value="${street.id}" th:text="${street.streetName}">=</option>
+                        <option th:each="street:${streetList}" th:value="${street.id}" th:text="${street.streetName}" th:selected="${client.streetId()==street.id}">=</option>
                     </select>
                 </label>
                 <label class="label-input">
@@ -93,7 +93,7 @@
                     <select class="rounded-input" name="bankId" th:placeholder="#{header.city.name}"
                             th:disabled="${!authorityMap.get('w')}"
                             th:value="${client.bankId}">
-                        <option th:each="bank:${bankList}" th:value="${bank.id}" th:text="${bank.bankName}">=</option>
+                        <option th:each="bank:${bankList}" th:value="${bank.id}" th:text="${bank.bankName}" th:selected="${client.bankId()==bank.id}">=</option>
                     </select>
                 </label>
                 <button th:hidden="${!authorityMap.get('e')}" class="rounded-button" type="submit" name="delete" value="false" th:text="#{button.update}">=

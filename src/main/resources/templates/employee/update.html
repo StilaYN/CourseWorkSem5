@@ -60,13 +60,16 @@
                 <label class="label-input">
                     <select class="rounded-input" name="cityId" th:placeholder="#{header.employees.city}"
                             th:disabled="${!authorityMap.get('w')}" th:value="${employee.cityId}">
-                        <option th:each="city:${cityList}" th:value="${city.id}" th:text="${city.cityName}">=</option>
+                        <option th:each="city:${cityList}" th:value="${city.id}" th:text="${city.cityName}"
+                                th:selected="${city.id==employee.cityId}">=
+                        </option>
                     </select>
                 </label>
                 <label class="label-input">
                     <select class="rounded-input" name="streetId" th:placeholder="#{header.employees.street}"
                             th:disabled="${!authorityMap.get('w')}" th:value="${employee.streetId}">
-                        <option th:each="street:${streetList}" th:value="${street.id}" th:text="${street.streetName} ">
+                        <option th:each="street:${streetList}" th:value="${street.id}" th:text="${street.streetName}"
+                                th:selected="${street.id==employee.streetId}">
                             =
                         </option>
                     </select>
@@ -91,7 +94,8 @@
                             th:disabled="${!authorityMap.get('w')}"
                             th:value="${employee.specializationId}">
                         <option th:each="specialization:${specializationList}" th:value="${specialization.id}"
-                                th:text="${specialization.specializationName}">=
+                                th:text="${specialization.specializationName}"
+                                th:selected="${specialization.id==employee.specializationId}">=
                         </option>
                     </select>
                 </label>
@@ -108,7 +112,8 @@
                             th:disabled="${!authorityMap.get('w')}"
                             th:value="${employee.documentTypeId}">
                         <option th:each="documentType:${documentTypeList}" th:value="${documentType.id}"
-                                th:text="${documentType.documentTypeName}">=
+                                th:text="${documentType.documentTypeName}"
+                                th:selected="${documentType.id()==employee.documentTypeId()}">=
                         </option>
                     </select>
                 </label>
@@ -131,9 +136,11 @@
                            th:disabled="${!authorityMap.get('w')}" th:value="${employee.salary}"
                     >
                 </label>
-                <button th:hidden="${!authorityMap.get('e')}" class="rounded-button" type="submit" name="delete" value="false" th:text="#{button.update}">=
+                <button th:hidden="${!authorityMap.get('e')}" class="rounded-button" type="submit" name="delete"
+                        value="false" th:text="#{button.update}">=
                 </button>
-                <button th:hidden="${!authorityMap.get('d')}" class="rounded-button" type="submit" name="delete" value="true" th:text="#{button.delete}">=
+                <button th:hidden="${!authorityMap.get('d')}" class="rounded-button" type="submit" name="delete"
+                        value="true" th:text="#{button.delete}">=
                 </button>
             </form>
         </div>

@@ -31,7 +31,7 @@
                 <label class="label-input">
                     <select class="rounded-input" name="cityId" th:placeholder="#{header.city.name}" th:value="${street.cityId()}"
                             th:disabled="${!authorityMap.get('w')}">
-                        <option th:each="city:${cityList}" th:value="${city.id}" th:text="${city.cityName}">=</option>
+                        <option th:each="city:${cityList}" th:value="${city.id}" th:text="${city.cityName}" th:selected="${street.cityId()==city.id()}">=</option>
                     </select>
                 </label>
                 <button th:hidden="${!authorityMap.get('e')}" class="rounded-button" type="submit" name="delete" value="false" th:text="#{button.update}">=

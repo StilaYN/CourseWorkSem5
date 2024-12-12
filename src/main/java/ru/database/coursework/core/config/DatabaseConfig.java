@@ -12,6 +12,7 @@ import ru.database.coursework.core.repository.ClientRepository;
 import ru.database.coursework.core.repository.DocumentTypeRepository;
 import ru.database.coursework.core.repository.EmployeeRepository;
 import ru.database.coursework.core.repository.MenuRepository;
+import ru.database.coursework.core.repository.ProjectRepository;
 import ru.database.coursework.core.repository.SpecializationRepository;
 import ru.database.coursework.core.repository.StreetRepository;
 
@@ -53,4 +54,7 @@ public class DatabaseConfig {
 
     @Bean
     public ClientRepository clientRepository(Jdbi jdbi) {return jdbi.onDemand(ClientRepository.class);}
+
+    @Bean
+    public ProjectRepository projectRepository(Jdbi jdbi){return jdbi.onDemand(ProjectRepository.class);}
 }
