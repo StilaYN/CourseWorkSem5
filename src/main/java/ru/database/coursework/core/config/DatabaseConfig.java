@@ -16,6 +16,7 @@ import ru.database.coursework.core.repository.ProjectRepository;
 import ru.database.coursework.core.repository.SpecializationRepository;
 import ru.database.coursework.core.repository.StreetRepository;
 import ru.database.coursework.core.repository.TeamMemberRepository;
+import ru.database.coursework.core.repository.TeamRepository;
 
 import javax.sql.DataSource;
 
@@ -61,4 +62,7 @@ public class DatabaseConfig {
 
     @Bean
     public TeamMemberRepository teamMemberRepository(Jdbi jdbi){return jdbi.onDemand(TeamMemberRepository.class);}
+
+    @Bean
+    public TeamRepository teamRepository(Jdbi jdbi){return jdbi.onDemand(TeamRepository.class);}
 }

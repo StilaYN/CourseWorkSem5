@@ -16,15 +16,11 @@ public class ApiPaths {
 
     public static final String CITY_UPDATE= "/city/update/{id}";
 
-    public static final String CITY_DELETE= "/city/delete/{id}";
-
     public static final String BANK_LIST= "/bank/list";
 
     public static final String BANK_CREATE= "/bank/create";
 
     public static final String BANK_UPDATE= "/bank/update/{id}";
-
-    public static final String BANK_DELETE= "/bank/delete/{id}";
 
     public static final String CLIENT_LIST= "/client/list";
 
@@ -32,15 +28,11 @@ public class ApiPaths {
 
     public static final String CLIENT_UPDATE= "/client/update/{id}";
 
-    public static final String CLIENT_DELETE= "/client/delete/{id}";
-
     public static final String DOCUMENT_TYPE_LIST= "/documentType/list";
 
     public static final String DOCUMENT_TYPE_CREATE= "/documentType/create";
 
     public static final String DOCUMENT_TYPE_UPDATE= "/documentType/update/{id}";
-
-    public static final String DOCUMENT_TYPE_DELETE= "/documentType/delete/{id}";
 
     public static final String EMPLOYEE_LIST= "/employee/list";
 
@@ -48,23 +40,11 @@ public class ApiPaths {
 
     public static final String EMPLOYEE_UPDATE= "/employee/update/{id}";
 
-    public static final String EMPLOYEE_DELETE= "/employee/delete/{id}";
-
-    public static final String MENU_LIST= "/menu/list";
-
-    public static final String MENU_CREATE= "/menu/create";
-
-    public static final String MENU_UPDATE= "/menu/update/{id}";
-
-    public static final String MENU_DELETE= "/menu/delete/{id}";
-
     public static final String PROJECT_LIST= "/project/list";
 
     public static final String PROJECT_CREATE= "/project/create";
 
     public static final String PROJECT_UPDATE= "/project/update/{id}";
-
-    public static final String PROJECT_DELETE= "/project/delete/{id}";
 
     public static final String PROJECT_LOG_LIST= "/projectLog/list";
 
@@ -80,31 +60,22 @@ public class ApiPaths {
 
     public static final String SPECIALIZATION_UPDATE= "/specialization/update/{id}";
 
-    public static final String SPECIALIZATION_DELETE= "/specialization/delete/{id}";
-
     public static final String STREET_LIST= "/street/list";
 
     public static final String STREET_CREATE= "/street/create";
 
     public static final String STREET_UPDATE= "/street/update/{id}";
 
-    public static final String STREET_DELETE= "/street/delete/{id}";
+    public static final String TEAM_LIST= "/team/list";
+
+    public static final String TEAM_CREATE = "/team/create";
+
+    public static final String TEAM_UPDATE = "/team/update/{id}";
 
     public static final String TEAM_MEMBER_LIST= "/teamMember/list";
 
     public static final String TEAM_MEMBER_CREATE= "/teamMember/create";
 
     public static final String TEAM_MEMBER_UPDATE= "/teamMember/update/{id}";
-
-    public static final String TEAM_MEMBER_DELETE= "/teamMember/delete/{id}";
-
-    public static final String MEMBER_LIST= "/member/list";
-
-    public static final String MEMBER_CREATE= "/member/create";
-
-    public static final String MEMBER_UPDATE= "/member/update/{id}";
-
-    public static final String MEMBER_DELETE= "/member/delete/{id}";
-
 
 }

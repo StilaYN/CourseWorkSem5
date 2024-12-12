@@ -62,10 +62,4 @@ public class CityController {
         return "city/update";
     }
 
-    @PostMapping(ApiPaths.CITY_DELETE)
-    public String deleteCity(@PathVariable("id") int id) {
-        cityService.deleteCityById(id);
-        return "redirect:/city/list";
-    }
-
 }

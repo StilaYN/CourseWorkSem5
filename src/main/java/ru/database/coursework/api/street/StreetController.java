@@ -61,10 +61,4 @@ public class StreetController {
         return "street/update";
     }
 
-    @PostMapping(ApiPaths.STREET_DELETE)
-    public String deleteStreet(@PathVariable("id") int id) {
-        streetService.deleteStreet(id);
-        return "redirect:/street/list";
-    }
-
 }
