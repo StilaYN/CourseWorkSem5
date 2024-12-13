@@ -16,8 +16,8 @@
         <div><a class="masked-link" th:href="@{/}"><h2 th:text="#{product.name}"></h2></a></div>
         <div class="search-container">
             <form method="get" th:action="@{/city/list}">
-                <label class="label-input search-label">
-                    <input type="text" class="search-input" th:name="cityName" th:placeholder="#{header.search}" th:value="${result}">
+                <label>
+
                 </label>
             </form>
         </div>
@@ -25,7 +25,8 @@
     <div class="page-horizontal-grid">
         <div th:insert="~{fragments/menu :: menu(menu=${menu})}"></div>
         <div class="two-row-container">
-
+            <div><h2 th:text="#{homepage.header}">=</h2></div>
+            <div><p th:text="#{homepage.body}">=</p></div>
         </div>
     </div>
     <div class="page-horizontal-grid">
