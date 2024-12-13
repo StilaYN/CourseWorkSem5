@@ -16,7 +16,8 @@ public class OtherController {
     }
 
     @GetMapping(ApiPaths.ABOUT)
-    public String getAbout() {
+    public String getAbout(Model model) {
+        model.addAttribute("menu", Context.menu);
         return "other/about";
     }
 }

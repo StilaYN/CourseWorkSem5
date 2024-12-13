@@ -2,13 +2,9 @@ package ru.database.coursework.core.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.database.coursework.api.common.model.SingleData;
-import ru.database.coursework.api.common.model.TableData;
-import ru.database.coursework.api.employee.mapper.EmployeeMapper;
 import ru.database.coursework.api.employee.model.Employee;
 import ru.database.coursework.api.employee.model.EmployeeCreationRequest;
 import ru.database.coursework.api.employee.model.EmployeeFilter;
-import ru.database.coursework.api.employee.model.EmployeeTableHeader;
 import ru.database.coursework.api.employee.model.EmployeeUpdateRequest;
 import ru.database.coursework.core.repository.EmployeeRepository;
 
