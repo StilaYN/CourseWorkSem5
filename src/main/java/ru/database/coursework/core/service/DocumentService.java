@@ -3,8 +3,8 @@ package ru.database.coursework.core.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import ru.database.coursework.core.exception.FileException;
 
-import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
@@ -46,8 +46,8 @@ public class DocumentService {
                 writer.println(res);
             }
 
-        } catch (FileNotFoundException e) {
-
+        } catch (Exception e) {
+            throw new FileException("exception.file");
         }
     }
 

@@ -16,23 +16,19 @@
     <div class="edit-page-horizontal-grid">
         <div>
             <div th:insert="~{fragments/menu :: menu(menu=${menu})}"></div>
-            <a th:href="@{/city/list}" th:text="#{button.back}"></a>
         </div>
         <div>
-            <h1 th:text="#{header.update.city}">=</h1>
-            <form method="post" th:action="@{/city/update/{id}(id=${city.id})}">
+            <h1 th:text="#{header.settings}">=</h1>
+            <div>
                 <label class="label-input">
-                    <input class="rounded-input" type="number" th:name="id" th:value="${city.id}" disabled>
+                    <a class="rounded-button masked-link-button" type="button" href="/homepage?lang=ru" th:text="#{button.ru}">=
+                    </a>
                 </label>
                 <label class="label-input">
-                    <input th:disabled="${!authorityMap.get('e')}" class="rounded-input" type="text" th:name="cityName" th:placeholder="#{header.city.name}"
-                           th:value="${city.cityName()}" maxlength="100">
+                    <a class="rounded-button masked-link-button" type="button" href="/homepage?lang=en" th:text="#{button.en}">=
+                    </a>
                 </label>
-                <button th:hidden="${!authorityMap.get('e')}" class="rounded-button" type="submit" name="delete" value="false" th:text="#{button.update}">=
-                </button>
-                <button th:hidden="${!authorityMap.get('d')}" class="rounded-button" type="submit" name="delete" value="true" th:text="#{button.delete}">=
-                </button>
-            </form>
+            </div>
         </div>
     </div>
 </div>

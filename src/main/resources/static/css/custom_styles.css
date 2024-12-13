@@ -16,6 +16,12 @@ tr {
     width: 100%;
     height: 100%;
 }
+.masked-link-button{
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    text-align: center;
+}
 
 .top-caption{
     position: static;

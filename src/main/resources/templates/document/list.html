@@ -50,12 +50,15 @@
     <div class="page-horizontal-grid">
         <div></div>
         <div class>
-            <form method="post" th:action="@{/document/file}">
+            <form method="post" th:action="@{/document/file}" th:object="${fileInfo}">
                 <input class="rounded-input" type="text" name="sqlQuery" th:value="${query}" th:placeholder="#{header.document.file}" hidden="hidden">
                 <label class="document-label-input">
-                    <input class="rounded-input" type="text" name="fileName" th:placeholder="#{header.document.file}">
+                    <input class="rounded-input" type="text" name="fileName" th:placeholder="#{header.document.file}" th:value="${fileInfo.fileName}">
                 </label>
                 <button class="list-button" type="submit" th:text="#{button.import}"></button>
+                <div class="error-box" th:if="${#fields.hasGlobalErrors()}">
+                    <p th:each="err : ${#fields.errors('global')}" th:text="#{|${err}|}" class="error" />
+                </div>
             </form>
         </div>
     </div>

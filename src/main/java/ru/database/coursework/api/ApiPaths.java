@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ApiPaths {
 
+    public static final String ABOUT = "/about";
+
     public static final String LOGIN = "/";
 
     public static final String HOMEPAGE = "/homepage";
@@ -52,13 +54,7 @@ public class ApiPaths {
 
     public static final String PROJECT_UPDATE = "/project/update/{id}";
 
-    public static final String PROJECT_LOG_LIST = "/projectLog/list";
-
-    public static final String PROJECT_LOG_CREATE = "/projectLog/create";
-
-    public static final String PROJECT_LOG_UPDATE = "/projectLog/update/{id}";
-
-    public static final String PROJECT_LOG_DELETE = "/projectLog/delete/{id}";
+    public static final String SETTINGS = "/settings";
 
     public static final String SPECIALIZATION_LIST = "/specialization/list";
 
