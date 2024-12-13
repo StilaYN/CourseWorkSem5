@@ -13,6 +13,7 @@ import ru.database.coursework.core.mapper.AuthMapper;
 import ru.database.coursework.core.repository.AuthRepository;
 
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @Service
@@ -43,9 +44,11 @@ public class AuthService {
     public void changePassword(ChangePasswordRequest changePasswordRequest) {
         AuthEntity authEntity = login(Context.userId, changePasswordRequest.oldPassword());
 
-        if (authEntity != null) {
+        if (Objects.equals(changePasswordRequest.newPassword(), changePasswordRequest.newPasswordRetry())) {
             log.info("auth entity {}", authEntity.toString());
             authRepository.changePassword(Context.userId, changePasswordRequest.newPassword());
+        } else {
+            throw new WrongPasswordException("exception.wrong.new.password");
         }
     }
 

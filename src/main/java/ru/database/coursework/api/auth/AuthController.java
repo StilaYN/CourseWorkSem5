@@ -46,13 +46,23 @@ public class AuthController {
     }
 
     @PostMapping(ApiPaths.CHANGE_PASSWORD)
-    public String changePassword(ChangePasswordRequest changePasswordRequest) {
-        authService.changePassword(changePasswordRequest);
+    public String changePassword(ChangePasswordRequest changePasswordRequest, BindingResult result, Model model) {
+        try {
+            authService.changePassword(changePasswordRequest);
+        } catch (WrongPasswordException e) {
+            ObjectError error = new ObjectError("global", e.getMessage());
+            result.addError(error);
+            if (result.hasErrors()) {
+                model.addAttribute("menu", Context.menu);
+                return "auth/change";
+            }
+        }
+
         return "redirect:/homepage";
     }
 
     @GetMapping(ApiPaths.CHANGE_PASSWORD)
-    public String getChangePassword(Model model) {
+    public String getChangePassword(Model model, ChangePasswordRequest changePasswordRequest) {
         model.addAttribute("menu", Context.menu);
         return "auth/change";
     }

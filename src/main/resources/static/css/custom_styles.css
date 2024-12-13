@@ -106,7 +106,7 @@ tr {
 .edit-page-horizontal-grid{
     display: grid;
     grid-template-columns: 2fr 4fr 2fr;
-    padding-top: 50px;
+    padding-top: 10px;
 }
 
 .edit-page-vertical-grid{

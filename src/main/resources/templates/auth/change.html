@@ -20,22 +20,28 @@
         </div>
         <div>
             <h1 th:text="#{header.change.password}">=</h1>
-            <form method="post" th:action="@{/change/password}">
+            <form method="post" th:action="@{/change/password}" th:object="${changePasswordRequest}">
                 <label class="label-input">
                     <input class="rounded-input" type="password" name="oldPassword" th:placeholder="#{header.oldPassword}"
+                           th:value="${changePasswordRequest.oldPassword}"
                            maxlength="100">
                 </label>
                 <label class="label-input">
                     <input class="rounded-input" type="password" name="newPassword" th:placeholder="#{header.newPassword}"
+                           th:value="${changePasswordRequest.newPassword}"
                            maxlength="100">
                 </label>
                 <label class="label-input">
                     <input class="rounded-input" type="password" name="newPasswordRetry" th:placeholder="#{header.newPassword.retry}"
+                           th:value="${changePasswordRequest.newPasswordRetry}"
                            maxlength="100">
                 </label>
                 <button  class="rounded-button" type="submit"
                         th:text="#{button.change}">=
                 </button>
+                <div class="error-box" th:if="${#fields.hasGlobalErrors()}">
+                    <p th:each="err : ${#fields.errors('global')}" th:text="#{|${err}|}" class="error" />
+                </div>
             </form>
         </div>
     </div>
