@@ -225,3 +225,12 @@ tr {
     border-right: 5px solid #e04747;
 
 }
+.error {
+    color: red;
+    text-align: center;
+}
+
+.error-box {
+    width:100%;
+    align-content: center;
+}

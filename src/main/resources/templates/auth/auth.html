@@ -20,16 +20,19 @@
         </div>
         <div>
             <h1 th:text="#{header.login}">=</h1>
-            <form method="post" th:action="@{/}">
+            <form method="post" th:action="@{/}" th:object="${authRequest}">
                 <label class="label-input">
                     <input class="rounded-input" type="text" name="username" th:placeholder="#{header.login.username}"
-                           maxlength="100">
+                           maxlength="100" th:value="${authRequest.username}">
                 </label>
                 <label class="label-input">
                     <input class="rounded-input" type="password" name="password" th:placeholder="#{header.login.password}"
-                           maxlength="100">
+                           maxlength="100" th:value="${authRequest.password}">
                 </label>
                 <button class="rounded-button" type="submit" th:text="#{button.login}">=</button>
+                <div class="error-box" th:if="${#fields.hasGlobalErrors()}">
+                    <p th:each="err : ${#fields.errors('global')}" th:text="#{|${err}|}" class="error" />
+                </div>
             </form>
         </div>
     </div>

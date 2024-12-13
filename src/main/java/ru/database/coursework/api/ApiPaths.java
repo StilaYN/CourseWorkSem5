@@ -28,6 +28,8 @@ public class ApiPaths {
 
     public static final String CLIENT_UPDATE = "/client/update/{id}";
 
+    public static final String CHANGE_PASSWORD = "/change/password";
+
     public static final String DOCUMENT = "/document";
 
     public static final String DOCUMENT_FILE= "/document/file";

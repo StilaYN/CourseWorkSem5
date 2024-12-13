@@ -10,7 +10,7 @@ import java.util.Map;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Context {
 
-    public static String message;
+    public static Integer userId;
 
     public static List<MenuItem> menu;
 
