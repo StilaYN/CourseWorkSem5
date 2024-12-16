@@ -23,12 +23,16 @@
         <div class="two-row-container-document">
             <div>
                 <h1 th:text="#{header.document}">=</h1>
-                <form method="get" th:action="@{/document}">
+                <form class="rounded-button-margin" method="get" th:action="@{/document}">
                     <label class="label-input">
                         <input class="rounded-input" type="text" name="sqlQuery"
                                th:placeholder="#{header.document.query}" th:value="${query}">
                     </label>
                 </form>
+                <label th:each="q:${pr_query}" class="rounded-button-margin">
+                    <a class="masked-link-button rounded-button" th:text="#{|${q.getName()}|}" th:value="${q.getQuery()}"
+                       th:href="@{/document(sqlQuery=${q.getQuery()})}">=</a>
+                </label>
             </div>
             <div class="table-container">
                 <table class="table table-hover table-bordered">
@@ -51,13 +55,15 @@
         <div></div>
         <div class>
             <form method="post" th:action="@{/document/file}" th:object="${fileInfo}">
-                <input class="rounded-input" type="text" name="sqlQuery" th:value="${query}" th:placeholder="#{header.document.file}" hidden="hidden">
+                <input class="rounded-input" type="text" name="sqlQuery" th:value="${query}"
+                       th:placeholder="#{header.document.file}" hidden="hidden">
                 <label class="document-label-input">
-                    <input class="rounded-input" type="text" name="fileName" th:placeholder="#{header.document.file}" th:value="${fileInfo.fileName}">
+                    <input class="rounded-input" type="text" name="fileName" th:placeholder="#{header.document.file}"
+                           th:value="${fileInfo.fileName}">
                 </label>
                 <button class="list-button" type="submit" th:text="#{button.import}"></button>
                 <div class="error-box" th:if="${#fields.hasGlobalErrors()}">
-                    <p th:each="err : ${#fields.errors('global')}" th:text="#{|${err}|}" class="error" />
+                    <p th:each="err : ${#fields.errors('global')}" th:text="#{|${err}|}" class="error"/>
                 </div>
             </form>
         </div>

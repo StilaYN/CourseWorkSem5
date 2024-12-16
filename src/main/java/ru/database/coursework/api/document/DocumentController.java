@@ -17,6 +17,8 @@ import ru.database.coursework.core.service.DocumentService;
 import java.util.List;
 import java.util.Map;
 
+import static ru.database.coursework.api.document.model.ReadyQuery.readyQueries;
+
 @Slf4j
 @Controller
 @RequiredArgsConstructor
@@ -31,6 +33,7 @@ public class DocumentController {
         model.addAttribute("results", result);
         model.addAttribute("keys", result.getFirst().keySet());
         model.addAttribute("menu", Context.menu);
+        model.addAttribute("pr_query", readyQueries);
         return "document/list";
     }
 
