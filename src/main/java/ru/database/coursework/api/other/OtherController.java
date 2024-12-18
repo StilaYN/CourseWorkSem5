@@ -20,4 +20,10 @@ public class OtherController {
         model.addAttribute("menu", Context.menu);
         return "other/about";
     }
+
+    @GetMapping(ApiPaths.CONTENT)
+    public String getContent(Model model) {
+        model.addAttribute("menu", Context.menu);
+        return "other/content";
+    }
 }

@@ -12,6 +12,8 @@ public class ApiPaths {
 
     public static final String HOMEPAGE = "/homepage";
 
+    public static final String CONTENT = "/content";
+
     public static final String CITY_LIST = "/city/list";
 
     public static final String CITY_CREATE = "/city/create";
